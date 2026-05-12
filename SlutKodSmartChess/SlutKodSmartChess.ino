@@ -311,8 +311,10 @@ void StockfishMove(String response) {
   duringMove = false;
 }
 
-//resetes the stepmotor to (0,0)
+//moves and resetes the stepmotor to (0,0)
 void goHome() {
+  moveToPosition(0,0);
+
   stepper1.setCurrentPosition(0);
   stepper2.setCurrentPosition(0);
 }

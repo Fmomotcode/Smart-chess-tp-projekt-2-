@@ -1,7 +1,7 @@
 """
 *Name: Smart Chess (selfmoving chessboard) 
-Author: Filip Momot
-
+*Author: Filip Momot
+*Date:
 This program creates a graphical chess interface using Tkinter,
 sends move information to the ESP32 through sockets, and uses Stockfish
 to make the best moves. Voice moves are handled using
@@ -168,7 +168,7 @@ class ChessGUI:
                 try:
                     data = conn.recv(1024).decode().strip()
                     if not data:
-                        continue  
+                        break  
                     print("Drag från ESP:", data)
                     self.root.after(0, lambda m=data: self.play_move(m))
                 except Exception as e:
